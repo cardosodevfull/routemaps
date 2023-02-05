@@ -1,5 +1,6 @@
 package com.api.routemaps.dto;
 
+import com.api.routemaps.Enum.DeliveryEnum;
 import com.api.routemaps.entity.Delivery;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -12,20 +13,25 @@ public class RotaDto {
     @NotNull
     private String userName;
 
-    @NotBlank
-    private String status;
+    @NotNull
+    private String userCurrier;
 
-    private LocalDateTime createdAt;
+    @NotNull
+    private Double price;
+
+    @NotNull
+    private Double distance;
 
     private List<Delivery> deliveries = new ArrayList<>();
 
     public RotaDto() {
     }
 
-    public RotaDto(String userName, String status, LocalDateTime createdAt, List<Delivery> deliveries) {
+    public RotaDto(String userName, String userCurrier, Double price, Double distance, List<Delivery> deliveries) {
         this.userName = userName;
-        this.status = status;
-        this.createdAt = createdAt;
+        this.userCurrier = userCurrier;
+        this.price = price;
+        this.distance = distance;
         this.deliveries = deliveries;
     }
 
@@ -37,20 +43,28 @@ public class RotaDto {
         this.userName = userName;
     }
 
-    public String getStatus() {
-        return status;
+    public String getUserCurrier() {
+        return userCurrier;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setUserCurrier(String userCurrier) {
+        this.userCurrier = userCurrier;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
     }
 
     public List<Delivery> getDeliveries() {

@@ -1,8 +1,9 @@
 package com.api.routemaps.entity;
 
+import com.api.routemaps.Enum.DeliveryEnum;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -14,15 +15,27 @@ public class Delivery {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false)
     private String andress;
+    private String complement;
+    private String instruction;
+
+    @Column(nullable = true)
+    @Enumerated(EnumType.STRING)
+    private DeliveryEnum status;
+    private Double latitude;
+    private Double longitude;
 
     public Delivery() {
     }
 
-    public Delivery(UUID id, String andress) {
+    public Delivery(UUID id, String andress, String complement, String instruction, DeliveryEnum status, Double latitude, Double longitude) {
         this.id = id;
         this.andress = andress;
+        this.complement = complement;
+        this.instruction = instruction;
+        this.status = status;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public UUID getId() {
@@ -39,5 +52,45 @@ public class Delivery {
 
     public void setAndress(String andress) {
         this.andress = andress;
+    }
+
+    public String getComplement() {
+        return complement;
+    }
+
+    public void setComplement(String complement) {
+        this.complement = complement;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+
+    public DeliveryEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(DeliveryEnum status) {
+        this.status = status;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 }

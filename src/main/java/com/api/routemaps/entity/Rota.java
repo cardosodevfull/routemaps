@@ -1,5 +1,6 @@
 package com.api.routemaps.entity;
 
+import com.api.routemaps.Enum.RotaEnum;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -23,18 +24,31 @@ public class Rota {
     @Column(name = "user_name", nullable = false, length = 100)
     private String userName;
 
-    @Column(nullable = false, length = 20)
-    private String status;
+    @Column(name = "user_currier", nullable = false)
+    private String userCurrier;
+
+    @Column(nullable = false)
+    private Double price;
+
+    @Column(nullable = false)
+    private Double distance;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private RotaEnum status;
 
     private LocalDateTime createdAt;
 
     public Rota() {
     }
 
-    public Rota(UUID id, List<Delivery> deliveries, String userName, String status, LocalDateTime createdAt) {
+    public Rota(UUID id, List<Delivery> deliveries, String userName, String userCurrier, Double price, Double distance, RotaEnum status, LocalDateTime createdAt) {
         this.id = id;
         this.deliveries = deliveries;
         this.userName = userName;
+        this.userCurrier = userCurrier;
+        this.price = price;
+        this.distance = distance;
         this.status = status;
         this.createdAt = createdAt;
     }
@@ -63,11 +77,35 @@ public class Rota {
         this.userName = userName;
     }
 
-    public String getStatus() {
+    public String getUserCurrier() {
+        return userCurrier;
+    }
+
+    public void setUserCurrier(String userCurrier) {
+        this.userCurrier = userCurrier;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    public RotaEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(RotaEnum status) {
         this.status = status;
     }
 
