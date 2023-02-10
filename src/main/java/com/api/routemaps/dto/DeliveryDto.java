@@ -1,6 +1,5 @@
 package com.api.routemaps.dto;
 
-import com.api.routemaps.Enum.DeliveryEnum;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,9 +10,6 @@ public class DeliveryDto {
     private String complement;
     @NotBlank
     private String instruction;
-
-    @NotBlank
-    private DeliveryEnum status;
     @NotNull
     private Double latitude;
     @NotNull
@@ -22,11 +18,10 @@ public class DeliveryDto {
     public DeliveryDto() {
     }
 
-    public DeliveryDto(String andress, String complement, String instruction, DeliveryEnum status, Double latitude, Double longitude) {
+    public DeliveryDto(String andress, String complement, String instruction, Double latitude, Double longitude) {
         this.andress = andress;
         this.complement = complement;
         this.instruction = instruction;
-        this.status = status;
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -53,14 +48,6 @@ public class DeliveryDto {
 
     public void setInstruction(String instruction) {
         this.instruction = instruction;
-    }
-
-    public DeliveryEnum getStatus() {
-        return status;
-    }
-
-    public void setStatus(DeliveryEnum status) {
-        this.status = status;
     }
 
     public Double getLatitude() {

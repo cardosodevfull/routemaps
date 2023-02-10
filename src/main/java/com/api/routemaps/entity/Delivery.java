@@ -1,9 +1,8 @@
 package com.api.routemaps.entity;
 
-import com.api.routemaps.Enum.DeliveryEnum;
+import com.api.routemaps.Enum.StatusEnum;
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -21,14 +20,14 @@ public class Delivery {
 
     @Column(nullable = true)
     @Enumerated(EnumType.STRING)
-    private DeliveryEnum status;
+    private StatusEnum status;
     private Double latitude;
     private Double longitude;
 
     public Delivery() {
     }
 
-    public Delivery(UUID id, String andress, String complement, String instruction, DeliveryEnum status, Double latitude, Double longitude) {
+    public Delivery(UUID id, String andress, String complement, String instruction, StatusEnum status, Double latitude, Double longitude) {
         this.id = id;
         this.andress = andress;
         this.complement = complement;
@@ -70,11 +69,11 @@ public class Delivery {
         this.instruction = instruction;
     }
 
-    public DeliveryEnum getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(DeliveryEnum status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

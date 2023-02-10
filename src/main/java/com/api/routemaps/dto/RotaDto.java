@@ -1,11 +1,9 @@
 package com.api.routemaps.dto;
 
-import com.api.routemaps.Enum.DeliveryEnum;
 import com.api.routemaps.entity.Delivery;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +20,7 @@ public class RotaDto {
     @NotNull
     private Double distance;
 
+    @OneToMany
     private List<Delivery> deliveries = new ArrayList<>();
 
     public RotaDto() {
@@ -74,4 +73,5 @@ public class RotaDto {
     public void setDeliveries(List<Delivery> deliveries) {
         this.deliveries = deliveries;
     }
+
 }

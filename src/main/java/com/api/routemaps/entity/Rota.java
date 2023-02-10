@@ -1,6 +1,6 @@
 package com.api.routemaps.entity;
 
-import com.api.routemaps.Enum.RotaEnum;
+import com.api.routemaps.Enum.StatusEnum;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -35,14 +35,14 @@ public class Rota {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private RotaEnum status;
+    private StatusEnum status;
 
     private LocalDateTime createdAt;
 
     public Rota() {
     }
 
-    public Rota(UUID id, List<Delivery> deliveries, String userName, String userCurrier, Double price, Double distance, RotaEnum status, LocalDateTime createdAt) {
+    public Rota(UUID id, List<Delivery> deliveries, String userName, String userCurrier, Double price, Double distance, StatusEnum status, LocalDateTime createdAt) {
         this.id = id;
         this.deliveries = deliveries;
         this.userName = userName;
@@ -101,11 +101,11 @@ public class Rota {
         this.distance = distance;
     }
 
-    public RotaEnum getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(RotaEnum status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

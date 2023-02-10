@@ -1,6 +1,6 @@
 package com.api.routemaps.Enum;
 
-public enum RotaEnum {
+public enum StatusEnum {
     CREATED,
     STARTED,
     FINISHED,
