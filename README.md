@@ -5,3 +5,5 @@
 ## POST 
 ### Exemplo de persistencia de uma rota:
 
+![Captura de tela de 2023-02-21 10-15-50](https://user-images.githubusercontent.com/119517231/220355062-6d3d8c1b-140c-4ffc-91b3-d92e675ae32e.png)
+
