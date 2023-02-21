@@ -5,33 +5,3 @@
 ## POST 
 ### Exemplo de persistencia de uma rota:
 
-###{
-    "userName": "Jhon",
-    "userCurrier": "pocurando...",
-    "price": 20.00,
-    "distance": 16.3255,
-    "deliveries":[
-        {
-            "andress": "Rua 02",
-            "complement": "lote 02",
-            "instruction": "Buscar um envelope",
-            "latitude": 21.343434,
-            "longitude": 32.000565
-        },
-        {
-            "andress": "Rua 03",
-            "complement": "lote 03",
-            "instruction": "Entregar um envelope",
-            "latitude": 21.343434,
-            "longitude": 32.000565
-        },
-         {
-            "andress": "Rua 04",
-            "complement": "lote 04",
-            "instruction": "Entregar um envelope",
-            "latitude": 21.343434,
-            "longitude": 32.000565
-        }
-    ]
-}
-
